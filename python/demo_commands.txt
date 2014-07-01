@@ -1,0 +1,21 @@
+example 1
+python3 merge_sort_crime_data.py sandag_crime_2007.csv sandag_crime_2008.csv sandag_crime_2009.csv sandag_crime_2010.csv sandag_crime_2011.csv sandag_crime_2012.csv AGENCY
+python3 merge_sort_crime_data.py sandag_crime_2007.csv sandag_crime_2008.csv sandag_crime_2009.csv sandag_crime_2010.csv sandag_crime_2011.csv sandag_crime_2012.csv activityDate
+
+example 2
+python3 group_count.py activityDate AGENCY LEGEND
+python3 group_count_multi.py activityDate AGENCY LEGEND
+
+example 3
+python3 geo_crime_data.py
+
+example 4
+cat centroids.csv abs-licenses-casnd.csv | python3 abs_mapper.py | sort | python3 abs_reducer.py
+sudo hadoop jar /opt/cloudera/parcels/CDH-5.0.2-1.cdh5.0.2.p0.13/lib/hadoop-mapreduce/hadoop-streaming-2.3.0-cdh5.0.2.jar \
+-mapper abs_mapper.py \
+-reducer abs_reducer.py \
+-input /user/hdfs/data/map_reduce_demo/*.csv  \
+-output /output-streaming7 -file abs_mapper.py -file abs_reducer.py;
+
+example 5
+sudo -u hdfs hadoop jar map_reduce_demo_test.jar /user/hdfs/data/map_reduce_demo /user/hdfs/data/map_reduce_demo /user/hdfs/map_reduce_demo/staging7  ./map_reduce_demo/output7

@@ -147,8 +147,3 @@ class ABSMapper(object):
        
 absMap = ABSMapper()
 record = absMap.main()
-
-            
-           
-            
-      

@@ -6,6 +6,7 @@ import pprint
 import sys
 import re
 
+
 class ABSReducer(object):
     
     def getData(self):
@@ -36,7 +37,6 @@ class ABSReducer(object):
                 mapped_data[cluster_key][license_key]['key_lat'] = line[8].strip()
     
         new_centers = self.recalcCenter(mapped_data) 
-        pprint.pprint(new_centers)  
         conv_test = self.testCenters(mapped_data, new_centers)
         print("Convergence Test Result: " + str(conv_test))
         self.reportFindings(mapped_data)
